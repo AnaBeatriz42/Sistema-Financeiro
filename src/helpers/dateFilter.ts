@@ -47,3 +47,8 @@ const addZeroToDate = (n: number): string =>{
       let months = ['Janeiro','Fevereiro', 'Março', 'Abril' , 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
       return `${months[parseInt(month)-1]} ${year}`;
  }
+
+ export const newDateAdjusted = (dateField: string) => {
+     let [year, month, day] = dateField.split('-')
+     return new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
+   }
